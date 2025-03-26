@@ -1,0 +1,325 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #2f8dcc, #7cd5f5);
+}
+
+.uvback {
+    width: 100%;
+    background-color:#56e45bae
+}
+
+.windpage {
+    width: 100%;
+    background-color:#f36a2bae
+}
+
+.temp-page {
+    width: 100%;
+    background-color:#f3f36a
+}
+
+.humiditypage {
+    width: 100%;
+    background-color: #bc7de3;
+}
+
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333; /* Dark background */
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+
+
+nav h1 {
+    font-size: 26px;
+    margin-left: 20px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+    margin-right: 80px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 18px;
+    
+    text-decoration: none; /* removes underline */
+    transition: 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* UI Home Page */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding-top: 70px; /* Offset for fixed navbar */
+}
+
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 2px 8px 10px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.container h2 {
+    font-size: 28px;
+    margin-top: 10px;
+}
+
+.search-box {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-box input {
+    padding: 12px;
+    width: 280px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+.search-box button {
+    padding: 12px 20px;
+    background-color: #ffcc00;
+    color: #222;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.search-box button:hover {
+    background-color: #e6b800;
+}
+
+/* Temperature */
+.temperature-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex-direction: column;
+    text-align: center;
+    max-width: 400px;  /* Keeps it balanced, not too wide */
+    margin: 50px auto; /* Centers it on the page */
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+}
+
+#thermometerIcon {
+    font-size: 115px;
+    transition: color 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+/* Icon Colour Changes */
+.cold { color: #1E90FF; } 
+.mild { color: #f7da32; } 
+.hot { color: #FF4500; } 
+
+#temperature {
+    display: flex;
+    font-size: 25px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;  /* Ensures text itself is centered */
+    width: 100%;  /* Takes full width of its container */
+    margin: 10px 0;
+}
+
+/* Temperature Button Toggle */
+#tempToggle {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+#tempToggle:hover {
+    background: #0056b3;
+}
+
+#tempToggle:active {
+    background: #0056b3;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+/* Wind Page */
+.wind-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-direction: column;
+    text-align: center;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+    transition: background-color 0.3s ease;
+}
+
+#windIcon {
+    font-size: 100px; /* large size for impact */
+    transition: transform 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+}
+
+/* Wind Speed Text */
+#windSpeed {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+/* Styles for different wind speeds */
+
+/* Light wind */
+.light-wind { 
+    color: #64b5f6; /* Light blue for light winds */
+    transform: scale(1); /* Default size */
+}
+
+/* Moderate wind */
+.moderate-wind {
+    color: #ffa726; /* Orange for moderate winds */
+    transform: scale(1.1); /* Slightly larger for moderate wind */
+}
+
+/* Strong wind */
+.strong-wind {
+    color: #e53935; /* Red for strong winds */
+    transform: scale(1.2); /* Larger for strong winds */
+}
+
+/* Humidity*/
+.humidity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 12px;
+    margin: 50px auto;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+    max-width: 400px; /* Keeps the layout balanced */
+}
+
+#humidityIcon {
+    font-size: 80px;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+}
+
+#humidityValue {
+    font-size: 35px; /* Larger font size for better visibility */
+}
+
+/* Icon Colour Changes */
+.low-humidity { color: #1E90FF; } 
+.normal-humidity { color: #3b923bc0; } 
+.high-humidity { color: #FF4500; }
+
+/* UV */
+.uv-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 12px;
+    margin: 50px auto;
+    padding: 45px;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* subtle shadow for depth */
+    max-width: 400px; /* Keeps the layout balanced */
+}
+
+#uvIcon {
+    font-size: 50px;
+    transition: all 0.3s ease;
+    color: #FFEB3B; 
+    margin-top: 10px;
+}
+
+/* Dynamic classes for UV icon based on UV index levels */
+#uvIcon.low {
+    color: #4CAF50; 
+}
+
+#uvIcon.moderate {
+    color: #FFEB3B; 
+}
+
+#uvIcon.high {
+    color: #FF9800;
+}
+
+#uvIcon.extreme {
+    color: #F44336; 
+    animation: pulse 1.5s infinite;
+}
+
+/* Pulsing animation for extreme UV levels */
+@keyframes pulse {
+    0% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.4);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(1.3);
+        opacity: 1;
+    }
+}
